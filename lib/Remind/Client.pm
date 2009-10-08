@@ -317,6 +317,8 @@ L<tkremind/"SERVER MODE">(1), L<remind>(1)
 
 L<Remind::Parser> for a tool to parse the calendar output.
 
+Remind's Homepage: L<http://www.roaringpenguin.com/products/remind>
+
 =head1 AUTHOR
 
 Mike Kelly <pioto@pioto.org>

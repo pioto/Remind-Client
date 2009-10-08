@@ -2,7 +2,9 @@ Remind-Client
 =============
 
 This distribution contains the Remind::Client class, which makes
-building clients to run on top of Remind's "Server Mode" easier.
+building clients to run on top of
+[Remind's](http://www.roaringpenguin.com/products/remind) "Server Mode"
+easier.
 
 It also provides a sample implementation of a subclass which sends all
 timed reminders to libnotify, and a script which executes it.
