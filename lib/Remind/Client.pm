@@ -315,6 +315,8 @@ This doesn't provide any useful support for non-timed reminders (yet).
 
 L<tkremind/"SERVER MODE">(1), L<remind>(1)
 
+L<Remind::Parser> for a tool to parse the calendar output.
+
 =head1 AUTHOR
 
 Mike Kelly <pioto@pioto.org>
