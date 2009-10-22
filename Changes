@@ -1,6 +1,6 @@
 Changes for Remind::Client
 
-master
+0.02  Wed Oct 21 23:39:30 EDT 2009
     - Better support for old versions of remind.
     - Improved documentation.
 

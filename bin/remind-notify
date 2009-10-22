@@ -23,7 +23,7 @@ use Pod::Usage;
 
 use Remind::Client::libnotify;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 $VERSION = eval $VERSION;
 
 my %O = (
