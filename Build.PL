@@ -3,6 +3,20 @@ use warnings;
 
 use Module::Build 0.28;
 
+use File::Spec;
+use FindBin;
+
+my $REMIND = 'remind';
+my $TEST_REMINDERS = File::Spec->catfile($FindBin::Bin, 't', '000_reminders');
+
+my $rem = `$REMIND -n $TEST_REMINDERS`;
+if ($? || ! defined $rem) {
+    die "Failed to run a test $REMIND command. Is remind installed?";
+}
+if ($rem !~ qr#^\d{4}/\d\d/\d\d it works!$#) {
+    die "Remind output didn't look right; got: $rem";
+}
+
 # This is so that I can automagically generate the Changes file from
 # git.
 my $class = Module::Build->subclass(
