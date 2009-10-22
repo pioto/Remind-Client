@@ -10,6 +10,7 @@ use FindBin;
 
 my $REMIND = 'remind';
 my $TEST_REMINDERS = File::Spec->catfile($FindBin::Bin, 't', '000_reminders');
+print "Checking for `$REMIND`... ";
 
 my $rem = `$REMIND -n $TEST_REMINDERS`;
 if ($? || ! defined $rem) {
@@ -18,6 +19,7 @@ if ($? || ! defined $rem) {
 if ($rem !~ qr#^\d{4}/\d\d/\d\d it works!$#) {
     die "Remind output didn't look right; got: $rem";
 }
+print "ok.\n";
 
 ## Build config
 
