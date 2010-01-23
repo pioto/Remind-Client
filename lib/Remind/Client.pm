@@ -40,7 +40,7 @@ use File::HomeDir;
 use IO::Handle;
 use IPC::Open2;
 
-our $DEBUG = 0;
+use constant DEBUG => 0;
 
 my $REMIND = 'remind';
 my @REMIND_SERVER_ARGS = qw(-z0);
@@ -291,7 +291,7 @@ sub sigHUP {
 
 # debug messages, for development
 sub _debug {
-    return unless $DEBUG;
+    return unless DEBUG;
 
     my ($self, @msg) = @_;
 
