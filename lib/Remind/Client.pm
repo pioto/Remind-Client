@@ -113,10 +113,10 @@ sub _loop {
 
     while (defined(my $line = $self->{child_out}->getline())) {
         chomp $line;
-        if (my ($due_time, $reminder_time, $tag) = $line =~ /^NOTE reminder (\S+) (\S+) (\S{0,48})$/) {
+        if (my ($due_time, $reminder_time, $tag) = $line =~ /^NOTE\s+reminder\s+(\S+)\s+(\S+)\s+(\S{0,48})$/) {
             my $msg;
             while(defined(my $line = $self->{child_out}->getline())) {
-                if ($line =~ /^NOTE endreminder$/) {
+                if ($line =~ /^NOTE\s+endreminder$/) {
                     last;
                 }
                 $msg .= $line;
@@ -124,13 +124,13 @@ sub _loop {
             chomp $msg;
             $self->_debug("Got a new reminder: $msg, due at $due_time, reminded at $reminder_time, with tag $tag");
             $self->reminder(message => $msg, due_time => $due_time, reminder_time => $reminder_time, tag => $tag);
-        } elsif ($line =~ /^NOTE newdate$/) {
+        } elsif ($line =~ /^NOTE\s+newdate$/) {
             $self->_debug("It's a new day.");
             $self->newdate();
-        } elsif ($line =~ /^NOTE reread$/) {
+        } elsif ($line =~ /^NOTE\s+reread$/) {
             $self->_debug("Config was reread.");
             $self->reread();
-        } elsif ($line =~ /^NOTE queued (\d+)$/) {
+        } elsif ($line =~ /^NOTE\s+queued\s+(\d+)$/) {
             $self->_debug("Got queued count: $1");
             $self->queued(count => $1);
         } else {
