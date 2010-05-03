@@ -201,7 +201,7 @@ is to issue a 'STATUS' command in response to this.
 
 This receives no parameters.
 
-The default implementation.
+The default implementation does nothing.
 
 =cut
 
