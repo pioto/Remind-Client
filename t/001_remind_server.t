@@ -44,7 +44,7 @@ use Test::NoWarnings;
         }
 
         my $r;
-        warning_is {$r = $self->send()} "Invalid command: ",
+        warning_is {$r = $self->send()} "Missing required argument 'command'",
             'send with no arguments';
         ok !$r, 'returned false';
         warning_is {$r = $self->send(command => 'not_a_valid command')} "Invalid command: NOT_A_VALID COMMAND",

@@ -255,6 +255,8 @@ reread() event being fired.
 sub send {
     my ($self, %args) = @_;
 
+    defined $args{command}
+        or return $self->_error("Missing required argument 'command'");
     $args{command} = uc $args{command};
     $args{command} =~ /^(EXIT|STATUS|REREAD)$/
         or return $self->_error("Invalid command: $args{command}");
