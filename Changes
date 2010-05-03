@@ -1,5 +1,11 @@
 Changes for Remind::Client
 
+master
+    - Support more variable whitespace in remind output. Should improve
+      support on older versions of remind.
+      Reported by: Timothy S. Nelson <wayland@wayland.id.au>
+    - Fix tests on perl 5.12.
+
 0.02  Wed Oct 21 23:39:30 EDT 2009
     - Better support for old versions of remind.
     - Improved documentation.
