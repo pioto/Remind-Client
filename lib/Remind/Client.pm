@@ -113,6 +113,7 @@ sub _loop {
 
     while (defined(my $line = $self->{child_out}->getline())) {
         chomp $line;
+        $self->_debug("Got new line: $line");
         if (my ($due_time, $reminder_time, $tag) = $line =~ /^NOTE\s+reminder\s+(\S+)\s+(\S+)\s+(\S{0,48})$/) {
             my $msg;
             while(defined(my $line = $self->{child_out}->getline())) {
