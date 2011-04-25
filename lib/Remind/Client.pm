@@ -328,7 +328,7 @@ Mike Kelly <pioto@pioto.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2009, Mike Kelly.
+Copyright (C) 2009-2011, Mike Kelly.
 
 This module is free software; you can redistribute it and/or modify it
 under the same terms as Perl 5.10.0. For more details, see the full text
